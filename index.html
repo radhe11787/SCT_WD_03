@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tic-Tac-<span class="highlight">Toe</span></h1>
+            <p>Play against a friend or challenge the computer!</p>
+        </header>
+
+        <div class="game-controls">
+            <div class="mode-selector">
+                <button id="pvp-btn" class="mode-btn active">Player vs Player</button>
+                <button id="pvc-btn" class="mode-btn">Player vs Computer</button>
+            </div>
+            <div class="difficulty-selector" id="difficulty-container">
+                <label for="difficulty">Computer Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="player-turn" id="player-turn">
+                <i class="fas fa-user"></i>
+                <span>Player X's Turn</span>
+            </div>
+            <div class="score-board">
+                <div class="score" id="score-x">
+                    <span>Player X</span>
+                    <span>0</span>
+                </div>
+                <div class="score" id="score-tie">
+                    <span>Ties</span>
+                    <span>0</span>
+                </div>
+                <div class="score" id="score-o">
+                    <span>Player O</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+            <div class="winning-line" id="winning-line"></div>
+        </div>
+
+        <div class="game-actions">
+            <button id="restart-btn" class="action-btn">
+                <i class="fas fa-redo"></i> Restart Game
+            </button>
+            <button id="new-game-btn" class="action-btn primary">
+                <i class="fas fa-plus"></i> New Game
+            </button>
+        </div>
+
+        <div class="message-overlay" id="message-overlay">
+            <div class="message-box">
+                <h2 id="message-text">Player X Wins!</h2>
+                <button id="close-message" class="action-btn primary">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
